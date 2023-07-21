@@ -1,0 +1,22 @@
+<div class="d-flex flex-column justify-content-center align-items-center">
+  <div class="col-4">
+    <p class="alert alert-warning"> <%= params[:ask] %> </p>
+    <p>-You</p>
+  </div>
+
+    <br>
+
+  <div class="col-4">
+    <% if params[:ask].include?("?") %>
+      <p class="alert alert-warning"> <%= "Silly question, get dressed and go to work!" %> </p>
+    <% elsif params[:ask] == "I am going to work right now!" %>
+      <p class="alert alert-warning"> <%= "Great!" %></p>
+    <% else %>
+      <p class="alert alert-warning"> <%= "I don't care, get dressed and go to work!" %> </p>
+    <% end %>
+    <p>-Coach</p>
+  </div>
+  <div class="col-4">
+    <%= link_to "Ask another question", ask_path, class: "btn btn-primary" %>
+  </div>
+</div>
